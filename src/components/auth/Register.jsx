@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import "./Login.css"
-import { createUser, getUserByEmail} from "../../services/UserService.jsx"
+import { createUser, getUserByEmail} from "./../service/userService.jsx"
 
 export const Register = (props) => {
   const [customer, setCustomer] = useState({
@@ -49,7 +49,7 @@ export const Register = (props) => {
   return (
     <main style={{ textAlign: "center" }}>
       <form className="form-login" onSubmit={handleRegister}>
-        <h1>Honey Rae Repairs</h1>
+        <h1>Foster Paws</h1>
         <h2>Please Register</h2>
         <fieldset>
           <div className="form-group">
@@ -88,7 +88,7 @@ export const Register = (props) => {
                 type="checkbox"
                 id="isStaff"
               />
-              I am an employee{" "}
+              I am a Foster{" "}
             </label>
           </div>
         </fieldset>
