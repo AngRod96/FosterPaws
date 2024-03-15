@@ -1,0 +1,31 @@
+.dog-card {
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px black;
+    padding: 15px;
+    margin: 10px;
+    text-align: center;
+    display: block;
+}
+
+.dog-card .dog-img {
+    max-width: 40%;
+    height: auto;
+    border-radius: 20p;
+}
+
+.dog-card .title {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    color: black
+}
+
+.cat-card {
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px black;
+    padding: 15px;
+    margin: 10px;
+    text-align: center;
+    display: block;
+}

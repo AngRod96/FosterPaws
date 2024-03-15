@@ -2,11 +2,9 @@ import "./Profile.css"
 import { createUser } from "../service/userService.jsx"
 
 export const Profile = ({users}) => {
-console.log(users)
     return  (
         <div className="userProfile">
             <div className="profile-pic">
-                
             </div>
             <div>
             <div>
@@ -19,7 +17,7 @@ console.log(users)
                 <div>{users?.email}</div>
             </div>
             <div>
-                <img className="userPic" alt="" src={users?.img} />
+                <img className="user-pic" alt="" src={users?.img} />
                
             </div>
             <div>
