@@ -3,7 +3,10 @@ import { Welcome } from "../welcome/Welcome.jsx";
 import { NavBar } from "../nav/NavBar.jsx";
 import { useState, useEffect } from "react";
 import ProfileData from "../Profile/ProfileData.jsx";
-import { AdoptData } from "../adopt/AdoptData.jsx";
+
+import PetsData from "../adopt/PetsData.jsx";
+
+
 
 
 export const ApplicationViews = () => {
@@ -32,7 +35,8 @@ export const ApplicationViews = () => {
         <Route path="profile">
           <Route index element={<ProfileData currentUser={currentUser} />} /> 
         </Route>
-        <Route path="adopt" element={<AdoptData />} />
+        <Route path="adopt" element={<PetsData />} />
+        
       </Route>
     </Routes>  
   )

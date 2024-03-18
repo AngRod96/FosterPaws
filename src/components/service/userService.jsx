@@ -18,3 +18,6 @@ export const  getUserProfile = (id) => {
     return fetch(`http://localhost:8088/users?id=${id}`).then((res) => res.json())
 }
 
+export const getAllPets = () => {
+    return fetch(`http://localhost:8088/pets`).then((response) => response.json())
+}
