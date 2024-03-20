@@ -34,10 +34,10 @@ export const NewPostForm = ({ currentUser }) => {
         if (post.body) {
             const newPost = {
                 breedId: post.breedId,
-                userId: currentUser.fullName,
+                userId: post.userId,
                 title: post.title,
-                body: post.description,
-                petPicture: ""
+                body: post.body,
+                petPicture: post.petPicture
                 
             }
 
@@ -52,19 +52,6 @@ export const NewPostForm = ({ currentUser }) => {
             <fieldset>
                 <input type="text" placeholder="pet name" name="title" onChange={handlePostChanges}/>
             </fieldset>
-            {/* <fieldset>
-                <select onChange={handlePostChanges}>
-                    <option value="choose breed">Choose Breed</option>
-                    <option value="golden-retriever">Golden Retriever</option>
-                    <option value="mix">Mix</option>
-                    <option value="pitbull">Pitbull</option>
-                    <option value="boxer">Boxer</option>
-                    <option value="domestic-shorthair">Domestic ShortHair</option>
-                    <option value="maine-coon">Maine Coon</option>
-                    <option value="domestic-longhair">Domestic Longhair</option>
-                </select>
-              
-            </fieldset> */}
             <fieldset>
                 <div className="choices">
                     <label>Male
@@ -100,7 +87,7 @@ export const NewPostForm = ({ currentUser }) => {
             </fieldset>
             <fieldset>
                 <div>
-                    <input type="text" placeholder="add pet picture url" name="petPicture" onChange={handlePostChanges}></input>
+                    <input type="text" placeholder="add pet picture" name="petPicture" onChange={handlePostChanges}></input>
                 </div>
             </fieldset>
             <fieldset>
@@ -118,8 +105,7 @@ export const NewPostForm = ({ currentUser }) => {
             <fieldset>
             <div>
                     <button type="button" className="save-btn" onClick={() => {
-                        handleSave(event)
-                        console.log("clicked")
+                        handleSave()
                 }}>Save Post</button>
             </div>
             </fieldset>

@@ -5,7 +5,8 @@ import { useState, useEffect } from "react";
 import ProfileData from "../Profile/ProfileData.jsx";
 import PetsData from "../adopt/PetsData.jsx";
 import NewPostForm from "../post/newPostForm.jsx";
-
+import { PetPost } from "../adopt/PetPost.jsx";
+import PetEdit from "../adopt/PetEdit.jsx";
 
 
 
@@ -35,8 +36,15 @@ export const ApplicationViews = () => {
         <Route path="profile">
           <Route index element={<ProfileData currentUser={currentUser} />} /> 
         </Route>
-        <Route path="adopt" element={<PetsData />} />
-        <Route path="newPost" element={<NewPostForm currentUser={currentUser} />} />
+        <Route path="adopt">
+          <Route index element={<PetsData />} />
+          <Route path=":petId" >
+            <Route index element={<PetPost currentUser={currentUser} />} />
+            <Route path="edit" element={<PetEdit />}/>
+          </Route>
+          <Route path="newPost" element={<NewPostForm currentUser={currentUser} />} />
+        
+        </Route >
       </Route>
     </Routes>  
   )
