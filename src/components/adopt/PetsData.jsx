@@ -29,22 +29,19 @@ export const PetsData = () => {
     return (
         <div>
             <div>
-                <label> Dog Breed</label>
+                <label>Breeds</label>
             <select>
                 <option value="golden-retriever">Golden Retriever</option>
                 <option value="mix">Mix</option>
                 <option value="pitbull">Pitbull</option>
                 <option value="boxer">Boxer</option>
-            </select>
-            </div>
-            <div>
-                <label> Cat Breed</label>
-            <select>
                 <option value="domestic-shorthair">Domestic ShortHair</option>
                 <option value="maine-coon">Maine Coon</option>
                 <option value="domestic-longhair">Domestic Longhair</option>
+                    
             </select>
             </div>
+       
         <div className="pets container">
                 <h2> Available Pets</h2>
                 <div>
@@ -66,6 +63,7 @@ export const PetsData = () => {
                             <h2 className="card-title">{pet.title}</h2>
                             <p className="pet-bio">{pet.body}</p>
                         </div>
+                     
                     )
                 })}
             </article>

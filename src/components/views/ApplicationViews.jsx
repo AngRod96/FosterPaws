@@ -3,8 +3,8 @@ import { Welcome } from "../welcome/Welcome.jsx";
 import { NavBar } from "../nav/NavBar.jsx";
 import { useState, useEffect } from "react";
 import ProfileData from "../Profile/ProfileData.jsx";
-
 import PetsData from "../adopt/PetsData.jsx";
+import NewPostForm from "../post/newPostForm.jsx";
 
 
 
@@ -36,7 +36,7 @@ export const ApplicationViews = () => {
           <Route index element={<ProfileData currentUser={currentUser} />} /> 
         </Route>
         <Route path="adopt" element={<PetsData />} />
-        
+        <Route path="newPost" element={<NewPostForm currentUser={currentUser} />} />
       </Route>
     </Routes>  
   )
