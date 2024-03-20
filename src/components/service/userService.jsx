@@ -26,12 +26,41 @@ export const getAllPets = () => {
 export const getBreed = () => {
   return fetch(`http://localhost:8088/breed`).then((response) => response.json())
 }
-export const createNewPost = (post) => {
+
+
+
+export const createNewPost = (newPost) => {
   return fetch(`http://localhost:8088/pets`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
     },
-    body: JSON.stringify(post)
+    body: JSON.stringify(newPost)
+  })
+}
+
+export const getAllPosts = (petId) => {
+  return fetch(`http://localhost:8088/pets/${petId}`).then((res) => res.json())
+}
+
+
+
+
+export const updatePost = (updatedPost) => {
+  return fetch(`http://localhost:8088/pets/${updatedPost.id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(updatedPost)
+  })
+}
+
+
+
+
+export const deletePost = (post) => {
+  return fetch(`http://localhost:8088/pets/${post.id}`, {
+    method: "delete"
   })
 }

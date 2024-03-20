@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react"
 import { getAllPets } from "../service/userService.jsx"
 import "../adopt/PetsData.css"
+import { Link } from "react-router-dom"
 
 export const PetsData = () => {
     const [allPetsData, setAllPetsData] = useState([])
     const [showDogs, setShowDogs] = useState(false)
     const [showCats, setShowCats] = useState(false)
     const [filteredPets, setFilteredPets] = useState([])
+   
 
     useEffect(() => {
         getAllPets().then((petsArray) => {
@@ -18,30 +20,18 @@ export const PetsData = () => {
         if (showDogs) {
             const dogsArray = allPetsData.filter(pet => pet.breedId === 1)
             setFilteredPets(dogsArray)
-        } if (showCats) {
-            const catsArray =  allPetsData.filter(pet => pet.breedId === 2)
+        }
+        if (showCats) {
+            const catsArray = allPetsData.filter(pet => pet.breedId === 2)
             setFilteredPets(catsArray)
-        } if (showDogs === false && showCats === false) {
+        }
+        if (showDogs === false && showCats === false) {
             setFilteredPets(allPetsData)
         }
     }, [showDogs, showCats, allPetsData])
 
     return (
-        <div>
-            <div>
-                <label>Breeds</label>
-            <select>
-                <option value="golden-retriever">Golden Retriever</option>
-                <option value="mix">Mix</option>
-                <option value="pitbull">Pitbull</option>
-                <option value="boxer">Boxer</option>
-                <option value="domestic-shorthair">Domestic ShortHair</option>
-                <option value="maine-coon">Maine Coon</option>
-                <option value="domestic-longhair">Domestic Longhair</option>
-                    
-            </select>
-            </div>
-       
+    <div>
         <div className="pets container">
                 <h2> Available Pets</h2>
                 <div>
@@ -55,13 +45,14 @@ export const PetsData = () => {
                     }}> Cats</button>
                 </div>
             <article className="pets">
-                {filteredPets.map(pet => {
+                {filteredPets?.map(pet => {
                     return (
-                        <div className="pet-card" key={pet.id}>
-                            <div>Foster Parent:{pet.userId}</div>
+                        <div className="pet-card"  key={pet.id}>
+                            <div>Foster Parent{pet.fullName}</div>
                             <img className="pet-picture" alt="profile picture" src={pet.petPicture}></img>
-                            <h2 className="card-title">{pet.title}</h2>
-                            <p className="pet-bio">{pet.body}</p>
+                            <h2  className="card-title">{pet.title} </h2>  
+                            <p className="pet-bio"><Link to={`/adopt/${pet.id}`}>{pet.body}</Link></p>
+                            
                         </div>
                      
                     )
