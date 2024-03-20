@@ -21,3 +21,17 @@ export const  getUserProfile = (id) => {
 export const getAllPets = () => {
     return fetch(`http://localhost:8088/pets`).then((response) => response.json())
 }
+
+
+export const getBreed = () => {
+  return fetch(`http://localhost:8088/breed`).then((response) => response.json())
+}
+export const createNewPost = (post) => {
+  return fetch(`http://localhost:8088/pets`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(post)
+  })
+}
