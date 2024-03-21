@@ -35,11 +35,10 @@ export const NewPostForm = ({ currentUser }) => {
         if (post.body) {
             const newPost = {
                 breedId: post.breedId,
-                userId: post.userId,
+                userId: currentUser.id,
                 title: post.title,
                 body: post.body,
                 petPicture: post.petPicture
-                
             }
 
             createNewPost(newPost).then(() => {
@@ -70,8 +69,8 @@ export const NewPostForm = ({ currentUser }) => {
             <fieldset>
                 <div>
                     <div className="breed-dropdown">
-                        <select name="breedId" onChange={handlePostChanges}>
-                            <option value="0" disabled selected >Choose One</option>
+                        <select name="breedId" value="option" onChange={handlePostChanges}>
+                            <option value="0" disabled >Choose One</option>
                                 {breed.map((breedObj) => {
                                     return (
                                         <>
@@ -105,8 +104,8 @@ export const NewPostForm = ({ currentUser }) => {
             </fieldset>
             <fieldset>
             <div>
-                    <button type="button" className="save-btn" onClick={() => {
-                        handleSave()
+                    <button type="button" className="save-btn" onClick={(event) => {
+                        handleSave(event)
                 }}>Save Post</button>
             </div>
             </fieldset>

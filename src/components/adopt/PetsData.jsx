@@ -48,8 +48,7 @@ export const PetsData = () => {
                 {filteredPets?.map(pet => {
                     return (
                         <div className="pet-card"  key={pet.id}>
-                            <div>Foster Parent:
-                                {pet?.user.fullName}</div>
+                            <div>Foster Parent:{pet?.user?.fullName}</div>
                             <img className="pet-picture" alt="profile picture" src={pet.petPicture}></img>
                             <h2  className="card-title">{pet.title} </h2>  
                             <p className="pet-bio"><Link  className="link" to={`/adopt/${pet.id}`}>{pet.body}</Link></p>
