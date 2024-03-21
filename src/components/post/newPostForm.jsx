@@ -8,6 +8,7 @@ import { getBreed } from "../service/userService.jsx"
 export const NewPostForm = ({ currentUser }) => {
     const [post, setPost] = useState({
         breedId: 0,
+        userId: 0,
         title: "",
         body: "",
         petPicture: ""
@@ -94,8 +95,8 @@ export const NewPostForm = ({ currentUser }) => {
                 <div className="bio-box">
                     <label>Description</label>
                         <textarea
-                             placeholder="Enter brief description of pet"
-                             rows={20}
+                            placeholder="Enter brief description of pet"
+                            rows={20}
                             cols={40}
                             onChange={handlePostChanges}
                             name="body">

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
-import { deletePost, getAllPets, getAllPosts } from "../service/userService.jsx"
+import {  getAllPosts } from "../service/userService.jsx"
 import { useParams } from "react-router-dom"
 
 
@@ -48,8 +48,3 @@ export default PetPost
 
 
 
-// const handleDelete = () => {
-//     deletePost(post.id).then(() => {
-//         setPost()
-//     })
-// }
