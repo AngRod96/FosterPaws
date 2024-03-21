@@ -19,7 +19,7 @@ export const  getUserProfile = (id) => {
 }
 
 export const getAllPets = () => {
-    return fetch(`http://localhost:8088/pets`).then((response) => response.json())
+    return fetch(`http://localhost:8088/pets?_expand=user`).then((response) => response.json())
 }
 
 
@@ -44,8 +44,6 @@ export const getAllPosts = (petId) => {
 }
 
 
-
-
 export const updatePost = (updatedPost) => {
   return fetch(`http://localhost:8088/pets/${updatedPost.id}`, {
     method: "PUT",
@@ -58,9 +56,8 @@ export const updatePost = (updatedPost) => {
 
 
 
-
-export const deletePost = (post) => {
-  return fetch(`http://localhost:8088/pets/${post.id}`, {
+export const deletePost = (postId) => {
+  return fetch(`http://localhost:8088/pets/${postId}`, {
     method: "delete"
   })
 }

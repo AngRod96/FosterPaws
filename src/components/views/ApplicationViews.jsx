@@ -32,6 +32,9 @@ export const ApplicationViews = () => {
           </>
         }
       >
+        <Route path="newPost"> 
+            <Route index element={<NewPostForm currentUser={currentUser} />} />
+        </Route>
         <Route index element={<Welcome />} />
         <Route path="profile">
           <Route index element={<ProfileData currentUser={currentUser} />} /> 
@@ -40,10 +43,8 @@ export const ApplicationViews = () => {
           <Route index element={<PetsData />} />
           <Route path=":petId" >
             <Route index element={<PetPost currentUser={currentUser} />} />
-            <Route path="edit" element={<PetEdit />}/>
+            <Route path="edit" element={<PetEdit />} />
           </Route>
-          <Route path="newPost" element={<NewPostForm currentUser={currentUser} />} />
-        
         </Route >
       </Route>
     </Routes>  
@@ -51,3 +52,4 @@ export const ApplicationViews = () => {
 }
 
 export default ApplicationViews
+

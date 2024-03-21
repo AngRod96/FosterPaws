@@ -20,7 +20,6 @@ export const ProfileData = ({currentUser}) => {
     return (
         <div className="user">
             <Profile users={userProfile} /> 
-
         </div>
 
     )
