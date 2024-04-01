@@ -32,9 +32,9 @@ export const PetsData = () => {
 
     return (
     <div>
-        <div className="pets container">
-                <h2> Available Pets</h2>
-                <div>
+        <div className="container">
+                <h2 className="header"> Available Pets</h2>
+                <div className="pets-buton">
                     <button className="dog-button" onClick={() => {
                         setShowDogs(true)
                         setShowCats(false)
@@ -47,17 +47,23 @@ export const PetsData = () => {
             <article className="pets">
                 {filteredPets?.map(pet => {
                     return (
-                        <div className="pet-card"  key={pet.id}>
-                            <div>Foster Parent:{pet?.user?.fullName}</div>
-                            <img className="pet-picture" alt="profile picture" src={pet.petPicture}></img>
-                            <h2  className="card-title">{pet.title} </h2>  
-                            <p className="pet-bio"><Link  className="link" to={`/adopt/${pet.id}`}>{pet.body}</Link></p>
-                            
+                        <div className="cards">
+                        <div className="app">
+                        <div className="animal-card"  key={pet.id}>
+                            <img className="card-image" alt="profile picture" src={pet.petPicture}></img>
+                            <h2  className="card">{pet.title} </h2>  
+                            <p className="card"><Link  className="pet-link" to={`/adopt/${pet.id}`}>{pet.body}</Link></p>
+                                <div className="foster">Foster Parent:
+                                    <div className="foster">{pet?.user?.fullName}</div>
+                                </div>
+                        </div>
+                        </div>
                         </div>
                      
                     )
                 })}
             </article>
+            
         </div>
     </div>
     )

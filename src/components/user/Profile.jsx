@@ -1,31 +1,21 @@
 import "./Profile.css"
 import { createUser } from "../service/userService.jsx"
 
+
 export const Profile = ({users}) => {
     return  (
-        <div className="userProfile">
-            <div className="profile-pic">
-            </div>
-            <div>
-            <div>
-                <div className="user-info"></div>
-                <div>{users?.fullName}</div>
-            </div>
-            </div>
-                <div>
-                <div className="user-info">Email:</div>
-                <div>{users?.email}</div>
-            </div>
-            <div>
-                <img className="user-pic" alt="" src={users?.img} />
-               
-            </div>
-            <div>
-            <div>
-                <div className="user-bio">Bio:</div>
-                    <div>{users?.bio}</div>
-            </div>
+        <div className="row">
+        <div className="column">
+            <div className="card-profile">
+                {/* <img className="profile-pic" src={users?.img} /> */}
+                <div className="container-profile">
+                    <h2>{users?.fullName}</h2>
+                    <p>{users?.bio}</p>
+                    <p>{users?.email}</p>
+                </div>
             </div>
         </div>
+    </div>
     )
 }
+

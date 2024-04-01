@@ -1,11 +1,10 @@
-
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { getAllPosts } from "../service/userService.jsx"
 import { useParams } from "react-router-dom"
 import { updatePost } from "../service/userService.jsx"
 import { deletePost } from "../service/userService.jsx"
-
+import "./PetsData.css"
 
 
 export const PetEdit = () => {
@@ -52,20 +51,22 @@ export const PetEdit = () => {
                     const postCopy = { ...post }
                     postCopy.title = event.target.value
                     setPost(postCopy)
-                }} type="text" value={post.title}/>
-                <img  src={post.petPicture} width="150" /> 
+                }} type="text"  value={post.title}/>
+                <img className="pet-edit-pic" src={post.petPicture} width="150" /> 
                 <div>
-                    <textarea onChange={(event) => {
+                    <textarea  rows={10}
+                        cols={40}
+                        onChange={(event) => {
                     const postCopy = { ...post }
                     postCopy.body = event.target.value
                     setPost(postCopy)
                 }}type="text" value={post.body}/>
                 </div>
                 <div>
-                    <button onClick={(event) => {{handleSave(event)}}}>Save</button>
+                    <button className="save-btn" onClick={(event) => {{handleSave(event)}}}>Save</button>
                 </div>
                 <div>
-                    <button onClick={(event) => {{handleDelete(event)}}}>Delete Post</button>
+                    <button className="delete-btn" onClick={(event) => {{handleDelete(event)}}}>Delete Post</button>
                 </div>
             
             </div>

@@ -3,9 +3,9 @@
     width: 60%;
     text-align: center;
     padding: 5rem 3rem;
-    border: 1px solid var(--outline);
-    background-color: white;
-    border-radius: 0.5rem;
+    background-color: #44677d;
+    border-radius: 25px;
+    color: whitesmoke
   }
   
   /* This targets any h1 that is a child of an element with the .welcome-container class */
@@ -18,4 +18,8 @@
   /* This targets any div that is a child of an element with the .welcome-container class */
   .welcome-container > div {
     font-style: italic;
+  }
+
+  .body{
+    background-color: #2d4453
   }

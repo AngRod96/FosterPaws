@@ -8,16 +8,16 @@ export const NavBar = () => {
     
     return <ul className="navbar">
         <li className="navbar-item">
-            <Link to="/" >Home</Link>
+            <Link className="link" to="/" >Home</Link>
         </li>
         <li className="navbar-item">
-            <Link to="/profile" >Profile</Link>
+            <Link className="link" to="/profile" >Profile</Link>
         </li>
         <li className="navbar-item">
-            <Link to="/adopt" >Adopt</Link>
+            <Link className="link" to="/adopt" >Adopt</Link>
         </li>
         <li className="navbar-item">
-            <Link to="/newPost">New Post</Link>
+            <Link className="link" to="/newPost">New Post</Link>
         </li>
        
         {localStorage.getItem("fosterpaws_user") ? (
