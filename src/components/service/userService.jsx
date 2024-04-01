@@ -27,8 +27,6 @@ export const getBreed = () => {
   return fetch(`http://localhost:8088/breed`).then((response) => response.json())
 }
 
-
-
 export const createNewPost = (newPost) => {
   return fetch(`http://localhost:8088/pets`, {
     method: "POST",

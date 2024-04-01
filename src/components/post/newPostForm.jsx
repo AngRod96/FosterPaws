@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { createNewPost } from "../service/userService.jsx"
 import { useNavigate } from "react-router-dom"
 import { getBreed } from "../service/userService.jsx"
-
+import "./newPostForm.css"
 
 
 export const NewPostForm = ({ currentUser }) => {
@@ -48,9 +48,9 @@ export const NewPostForm = ({ currentUser }) => {
     }
     return (
         <form>
-            <h2>Add New Pet</h2>
+            <h2 className="newPost-Header">Add New Pet</h2>
             <fieldset>
-                <input type="text" placeholder="pet name" name="title" onChange={handlePostChanges}/>
+                <input type="text" placeholder="Pet Name" name="title" onChange={handlePostChanges}/>
             </fieldset>
             <fieldset>
                 <div className="choices">
@@ -87,12 +87,12 @@ export const NewPostForm = ({ currentUser }) => {
             </fieldset>
             <fieldset>
                 <div>
-                    <input type="text" placeholder="add pet picture" name="petPicture" onChange={handlePostChanges}></input>
+                    <input type="text" placeholder="Add pet picture" name="petPicture" onChange={handlePostChanges}></input>
                 </div>
             </fieldset>
             <fieldset>
                 <div className="bio-box">
-                    <label>Description</label>
+                    <label className="description">Description</label>
                         <textarea
                             placeholder="Enter brief description of pet"
                             rows={20}

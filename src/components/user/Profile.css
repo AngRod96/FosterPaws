@@ -1,6 +1,20 @@
-.user-pic {
-    border-radius: 9px;
-    display: block;
-    max-width: 20%;
-    height: auto;
+.column {
+    width: 33.3%;
+    margin-bottom: 16px;
+    padding: 0 8px;
+    margin-top: 60px
 }
+
+.card-profile{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border: 1px solid #44677d;
+}
+
+.container-profile{
+    padding: 0 16px
+}
+  
+.profile-pic{
+    width: 100%;
+}
+

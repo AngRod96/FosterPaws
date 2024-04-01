@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import {  getAllPosts } from "../service/userService.jsx"
 import { useParams } from "react-router-dom"
-
+import "./PetsData.css"
 
 
 
@@ -28,14 +28,14 @@ export const PetPost = ({currentUser}) => {
 
 
     return (
-            <div>
-                    <h1>{post.title}</h1>
-                    <img  src={post.petPicture} width="150" /> 
-                    <div>{post.body}</div>
+            <div className="edit-container">
+                    <h2 className="card">{post.title}</h2>
+                    <img className="edit-image" src={post.petPicture} width="150" /> 
+                    <div className="card-body">{post.body}</div>
             
             {currentUser?.id === post.userId ? (
                     <div>
-                    <button onClick={(event) => { handleEdit(event) }}>Edit</button>
+                    <button className="edit-button" onClick={(event) => { handleEdit(event) }}>Edit</button>
                     </div>
                 ) : ("") }
             </div> 

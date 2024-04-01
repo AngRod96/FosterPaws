@@ -7,6 +7,7 @@ import PetsData from "../adopt/PetsData.jsx";
 import NewPostForm from "../post/newPostForm.jsx";
 import { PetPost } from "../adopt/PetPost.jsx";
 import PetEdit from "../adopt/PetEdit.jsx";
+import Images from "../welcome/Welcome.jsx";
 
 
 
@@ -35,7 +36,7 @@ export const ApplicationViews = () => {
         <Route path="newPost"> 
             <Route index element={<NewPostForm currentUser={currentUser} />} />
         </Route>
-        <Route index element={<Welcome />} />
+        <Route index element={<><Welcome /><Images  /></>} />
         <Route path="profile">
           <Route index element={<ProfileData currentUser={currentUser} />} /> 
         </Route>
